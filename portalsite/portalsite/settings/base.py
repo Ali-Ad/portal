@@ -27,7 +27,10 @@ INSTALLED_APPS = [
     "home",
     "search",
     "header",
+    "footer",
+
     "bootstrap4",
+
     "wagtail.contrib.forms",
     "wagtail.contrib.redirects",
     "wagtail.embeds",
@@ -39,8 +42,10 @@ INSTALLED_APPS = [
     "wagtail.search",
     "wagtail.admin",
     "wagtail",
+
     "modelcluster",
     "taggit",
+
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",

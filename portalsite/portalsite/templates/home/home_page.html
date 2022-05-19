@@ -1,0 +1,50 @@
+{%extends "base.html"%}
+{% load bootstrap4 %}
+{%block content%}
+<head>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Home</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor02"
+                    aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarColor02">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        {%for post in posts%}
+                        {%for x in post.content%}
+                        {{x}}
+                        {%endfor%}
+                        {%endfor%}
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</head>
+<body>
+</body>
+<div class="footer-basic">
+    <footer>
+        <div class="social"><a href="#"><i class="icon ion-social-instagram"></i></a><a href="#"><i
+                class="icon ion-social-snapchat"></i></a><a href="#"><i class="icon ion-social-twitter"></i></a><a
+                href="#"><i class="icon ion-social-facebook"></i></a></div>
+        <ul class="list-inline">
+            {% for each in footers%}
+            {%if each.internal_url %}
+            <li class="list-inline-item"><a href="{{each.internal_url}}">{{each.title}}</a></li>
+            {%elif each.external_url%}
+            <li class="list-inline-item"><a href="{{each.external_url}}">{{each.title}}</a></li>
+            {%else%}
+            <li class="list-inline-item"><a href="#">{{each.title}}</a></li>
+            {%endif%}
+            {%endfor%}
+        </ul>
+        <p class="copyright">Company Name © 2018</p>
+    </footer>
+</div>
+
+
+{%endblock%}
+

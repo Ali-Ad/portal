@@ -5,13 +5,17 @@ from wagtail.core.fields import StreamField
 
 from . import blocks
 
+
 class HeaderPage(Page):
     template = "header/header_page.html"
     max_count = 1
 
     content = StreamField([
-        ("headr", blocks.HeaderBlock())
-    ])
+        ("header", blocks.HeaderBlock())
+    ],
+        null=True,
+        blank=True,
+    )
 
     content_panels = Page.content_panels + [
         StreamFieldPanel("content")

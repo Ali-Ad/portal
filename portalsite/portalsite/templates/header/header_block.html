@@ -1,3 +1,4 @@
+{% load bootstrap4 %}
 {%if self.dropdown_item%}
 <li class="nav-item dropdown">
     {%if self.page%}
@@ -5,6 +6,7 @@
     {%elif self.url%}
     <a class="navbar-brand" data-bs-toggle="dropdown" href="www.google.com" role="button">{{self.sub_title}}eeeee</a>
     {%endif%}
+
     <div class="dropdown-menu">
         {% for card in self.dropdown_item%}
         <a class="dropdown-item" href="{{card.page_url}}">{{card.text}}</a>
@@ -16,4 +18,3 @@
     <a class="navbar-brand" href="{{self.url}}">{{self.sub_title}}aa</a>
 </li>
 {%endif%}
-

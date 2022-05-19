@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+
+{% for each in self.footer_order.all%}
+
+{%if each.internal_url %}
+<a href="{{internal_url}}">{{each.title}}</a>
+{%elif each.external_url%}
+<a href="{{each.external_url}}">{{each.title}}</a>
+{%else%}
+<a href="#">{{each.title}}</a>
+
+{%endif%}
+{%endfor%}
+{%endblock%}
